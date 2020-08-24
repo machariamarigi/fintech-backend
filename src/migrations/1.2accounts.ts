@@ -32,7 +32,13 @@ export async function up(i: QueryInterface): Promise<any> {
                 model: 'Users',
                 key: 'id'
             }
-        }
+        },
+        createdOn: {
+            type: Sequelize.DATE,
+        },
+        updatedAt: {
+            type: Sequelize.DATE,
+        },
     });
 };
 
