@@ -1,13 +1,15 @@
 import { Sequelize } from 'sequelize';
 import Umzug = require('umzug');
 
+require('dotenv').config()
+
 const sequelize = new Sequelize({
     dialect: 'postgres',
-    host: 'localhost',
+    host: process.env.DB_HOST,
     port: 5432,
-    username: 'postgres',
-    password: '',
-    database: 'fintechnest'
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 })
 
 const umzug = new Umzug({
