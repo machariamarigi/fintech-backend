@@ -26,6 +26,16 @@ export async function up(i: QueryInterface): Promise<any> {
             type: Sequelize.CHAR(250),
             allowNull: false,
         },
+        Salt: {
+            type: Sequelize.CHAR(250),
+            allowNull: false,
+        },
+        createdOn: {
+            type: Sequelize.DATE,
+        },
+        updatedAt: {
+            type: Sequelize.DATE,
+        },
     });
 };
 
