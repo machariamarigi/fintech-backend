@@ -18,7 +18,7 @@ export class Users extends Model<Users> {
         type: DataType.CHAR(200),
         allowNull: false,
     })
-    public UserName: string
+    public Username: string
 
     @Column({
         type: DataType.CHAR(50),
