@@ -1,7 +1,7 @@
 import { Injectable, Inject } from "@nestjs/common";
 import * as jwt from 'jsonwebtoken';
-import { Users } from "./user.entity";
-import { IUser } from "./user.interface";
+import { Users } from "./users.entity";
+import { IUser } from "./users.interface";
 import { jwtConfig } from "src/config/jwtConfig";
 
 import crypto = require('crypto');

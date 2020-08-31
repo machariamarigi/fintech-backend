@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { Users } from '../user/user.entity';
+import { Users } from '../users/users.entity';
 
 export const databaseProvider = [
     {
