@@ -30,7 +30,7 @@ export async function up(i: QueryInterface): Promise<any> {
             type: Sequelize.CHAR(250),
             allowNull: false,
         },
-        createdOn: {
+        createdAt: {
             type: Sequelize.DATE,
         },
         updatedAt: {
