@@ -5,11 +5,13 @@ import { IUser } from "./users.interface";
 import { jwtConfig } from "src/config/jwtConfig";
 
 import crypto = require('crypto');
+import { AccountsService } from "../accounts/accounts.service";
 
 @Injectable()
 export class UsersService {
     constructor(
-        @Inject('USERS_REPOSITORY') private usersRepisotory: typeof Users
+        @Inject('USERS_REPOSITORY') private usersRepisotory: typeof Users,
+        private accountsService: AccountsService
     ) {}
 
     public async create(user: IUser): Promise<any> {
@@ -23,6 +25,9 @@ export class UsersService {
             const newUser: any = await this.usersRepisotory.create<Users>(user)
             const jwtToken = jwt.sign(user, process.env.JWT_KEY, jwtConfig)
             newUser.Token = jwtToken
+            if (newUser) {
+                this.accountsService.create(newUser.id)
+            }
             return newUser
         }
     }
