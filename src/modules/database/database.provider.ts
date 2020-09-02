@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { Users } from '../users/users.entity';
+import { Accounts } from '../accounts/accounts.entity';
 
 export const databaseProvider = [
     {
@@ -14,7 +15,7 @@ export const databaseProvider = [
                 database: process.env.DB_NAME,
             })
 
-            sequelize.addModels([Users]);
+            sequelize.addModels([Users, Accounts]);
 
             return sequelize
         }
